@@ -20,22 +20,22 @@ For each input below, **write down your guess** for how many tokens it
 splits into, then run it and check.
 
 ```python
-show("supercalifragilisticexpialidocious")
-show("2026")
-show("🐍🔥")
-show("antidisestablishmentarianism")
-show("don't")
-show("misspeling")
+show("supercalifragilisticexpialidocious") 8
+show("2026") 2
+show("🐍🔥") 2
+show("antidisestablishmentarianism") 10
+show("don't") 3
+show("misspeling") 3
 ```
 
 | Input | Your guess | Actual tokens |
-|---|---|---|
-| supercalifragilisticexpialidocious | | |
-| 2026 | | |
-| 🐍🔥 | | |
-| antidisestablishmentarianism | | |
-| don't | | |
-| misspeling | | |
+|---|---:|---|
+| `supercalifragilisticexpialidocious` | **8**|| **11**|
+| `2026` | **2** | | **2**|
+| `🐍🔥` | **2** | | **6** | 
+| `antidisestablishmentarianism` | **10** | | **5** | 
+| `don't` | **3** | | **2** | 
+| `misspeling` | **3** | | **3** | 
 
 <details>
 <summary>💡 What's actually happening</summary>
@@ -58,11 +58,12 @@ find one that splits into **3 or more** tokens.
 show("your_word_here")
 ```
 
-Write the word you found and its token split here: _______________________
+Write the word you found and its token split here: hipotenusa -> ['hip', 'ot', 'en', 'usa']
 
 ## Task 3: Same word, different case/spacing
 
 Run all three and compare — are the token IDs the same?
+No. All three are one token, but they have different token IDs because the tokenizer is case-sensitive and treats a leading space differently.
 
 ```python
 show("hello")
@@ -86,3 +87,4 @@ to the model, not the same word.
 If tokens (not words) are what you pay for and what count toward a
 model's context limit, why might that matter when writing prompts in
 languages other than English, or when working with code/numbers?
+It matters because some languages, numbers, or code may use more tokens than others, which can increase costs and use more of the model's context limit.   01_workbook_tokenization_scaven…

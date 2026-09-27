@@ -36,7 +36,7 @@ top5("I think the answer is")
 top5("I think the answer is,")
 ```
 
-Write down what changed: _______________________
+Write down what changed: Adding just one comma changed both the top predicted tokens and their probabilities. For example, “yes” dropped from 17.8% to 6.3%, showing that even a small punctuation change can significantly affect the model's prediction.
 
 <details>
 <summary>💡 What's happening</summary>
@@ -65,10 +65,10 @@ top5("The most important thing in life is")
 
 | Prompt | #1 token probability | Confident or uncertain? |
 |---|---|---|
-| The capital of France is | | |
-| The capital of that country is | | |
-| My favorite color is | | |
-| The most important thing in life is | | |
+| The capital of France is | 17.4% | More confident |
+| The capital of that country is | 4.8% | Uncertain |
+| My favorite color is | 6.2% | Uncertain |
+| The most important thing in life is | 43.2% | More confident |
 
 <details>
 <summary>💡 Answer</summary>
@@ -94,9 +94,16 @@ top5("your_prompt_1")
 top5("your_prompt_2")
 ```
 
+top5("The weather today is")
+top5("The weather tomorrow is")
+
+I predicted that changing “today” to “tomorrow” would change the model's predictions. I was right: the top prediction changed from “very” (4.9%) to “going” (15.9%), and the other top predictions also changed significantly.
+
 ## Discussion (2 minutes)
 
 If small wording changes can shift what a model predicts, what does that
 imply about how careful you need to be when writing prompts for a
 production system — and why might the same prompt behave differently
 across model versions?
+
+Small changes in wording can change the model's output, so prompts used in production need to be written and tested carefully. The same prompt may also behave differently across model versions because different models can predict different probabilities.

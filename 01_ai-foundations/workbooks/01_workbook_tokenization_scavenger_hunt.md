@@ -29,13 +29,13 @@ show("misspeling") 3
 ```
 
 | Input | Your guess | Actual tokens |
-|---|---:|---|
-| `supercalifragilisticexpialidocious` | **8**|| **11**|
-| `2026` | **2** | | **2**|
-| `🐍🔥` | **2** | | **6** | 
-| `antidisestablishmentarianism` | **10** | | **5** | 
-| `don't` | **3** | | **2** | 
-| `misspeling` | **3** | | **3** | 
+|---|---:|---:|
+| `supercalifragilisticexpialidocious` | **8** | **11** |
+| `2026` | **2** | **2** |
+| `🐍🔥` | **2** | **6** |
+| `antidisestablishmentarianism` | **10** | **5** |
+| `don't` | **3** | **2** |
+| `misspeling` | **3** | **3** |
 
 <details>
 <summary>💡 What's actually happening</summary>

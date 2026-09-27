@@ -19,7 +19,7 @@ print("Target:", data.target_names)
 **Question:** name two of the features. What's the target we're trying
 to predict?
 
-Your answer: _______________________
+Your answer: Two features are MedInc (median income) and HouseAge (median house age). The target is MedHouseVal (median house value).
 
 ## Task 1: Check a relationship
 
@@ -28,7 +28,7 @@ target, `MedHouseVal`.
 
 ```python
 # TODO: make a scatter plot of MedInc (x) vs MedHouseVal (y)
-df.plot.___________________________(x="MedInc", y="MedHouseVal", alpha=0.2)
+df.plot.scatter(x="MedInc", y="MedHouseVal", alpha=0.2)
 ```
 
 <details>
@@ -42,6 +42,7 @@ df.plot.scatter(x="MedInc", y="MedHouseVal", alpha=0.2)
 
 Does higher income roughly track with higher home value? Any outliers
 that jump out?
+Yes. Higher median income generally corresponds to higher median house values, although there is a lot of variation and some outliers.
 
 ## Task 2: Fit a tiny regression
 
@@ -69,8 +70,10 @@ print("Predicted median home value ($100k units):", model.predict(sample_income)
 R² is between 0 and 1 — roughly, the fraction of the variation in home
 value that `MedInc` alone explains. Is this a strong or weak predictor by
 itself?
+The R² is approximately 0.46. This means median income explains about 46% of the variation in median house values. Income has a relationship with house value, but it is not enough by itself to accurately predict house values.
 
 ## Discussion (1–2 minutes)
 
 We used just **one** feature (`MedInc`) to predict home value. What other
 columns in `df` might improve the prediction if we added them to `X`?
+House age, number of rooms, population, and location (latitude and longitude) could help improve the prediction.

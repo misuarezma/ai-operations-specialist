@@ -42,6 +42,7 @@ print(text + tokenizer.decode(next_id))
 
 Run it 5 times in a row. Did you get the same word every time? Did any
 surprise you?
+Yes, I got different answers each time. I was surprised by this one: The cat sat on the steak
 
 <details>
 <summary>💡 Answer</summary>
@@ -91,3 +92,4 @@ dimension, hence `unsqueeze(0)`.
 Greedy decoding is deterministic; sampling is stochastic. Which would you
 want for a chatbot? For a customer-facing summarizer? Why might
 inconsistency be a problem in production?
+For a chatbot, some sampling can make responses more natural and varied. For a customer-facing summarizer, I would prefer more deterministic outputs because consistency is more important. In production, too much randomness can be a problem because the same input could produce different or inconsistent answers.

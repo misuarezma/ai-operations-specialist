@@ -18,7 +18,7 @@ print("Features:", ds.column_names)
 **Question:** which column is a *feature* (the input) and which is the
 *target* (what we're predicting)?
 
-Your answer: _______________________
+Your answer: The feature/input is text, and the target is label.
 
 ## Task 1: Check the label distribution
 
@@ -31,7 +31,7 @@ df = ds.to_pandas()
 df["label_name"] = df["label"].map(lambda i: labels[i])
 
 # TODO: count rows per label_name
-counts = ___________________________
+counts = df["label_name"].value_counts()
 counts.plot(kind="bar")
 ```
 
@@ -45,6 +45,7 @@ counts = df["label_name"].value_counts()
 </details>
 
 Is the dataset balanced across the four categories, or skewed?
+The dataset is skewed, with Sci/Tech making up most of the examples.
 
 ## Task 2: Let a pretrained model guess the category
 
